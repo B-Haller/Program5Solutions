@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5Homework1\Program5Homework1\bin\Debug\Program5Homework1.exe.config
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5Homework1\Program5Homework1\obj\Debug\Program5Homework1.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5Homework1\Program5Homework1\bin\Debug\Program5Homework1.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5Homework1\Program5Homework1\bin\Debug\Program5Homework1.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5Homework1\Program5Homework1\obj\Debug\Program5Homework1.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5Homework1\Program5Homework1\obj\Debug\Program5Homework1.pdb
