@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5WordLetterFinder\Program5WordLetterFinder\bin\Debug\Program5WordLetterFinder.exe.config
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5WordLetterFinder\Program5WordLetterFinder\bin\Debug\Program5WordLetterFinder.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5WordLetterFinder\Program5WordLetterFinder\bin\Debug\Program5WordLetterFinder.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5WordLetterFinder\Program5WordLetterFinder\obj\Debug\Program5WordLetterFinder.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5WordLetterFinder\Program5WordLetterFinder\obj\Debug\Program5WordLetterFinder.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Program5WordLetterFinder\Program5WordLetterFinder\obj\Debug\Program5WordLetterFinder.pdb

@@ -8,6 +8,7 @@ namespace Program5Homework1
 {
     class Program
     {
+       
         static void Main(string[] args)
         {
             //declare a string variable
