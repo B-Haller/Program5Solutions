@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Brandon Haller
+
 namespace GroupMaker10000
 {
     class Program
@@ -25,11 +27,12 @@ namespace GroupMaker10000
             Random rng = new Random();
             List<int> groupList = new List<int>();
             List<int> classList = new List<int>();
+            int groupCounter = 1;
             
             //populate class list
-            for (int i = 0; i < classSize; i++)
+            for (int i = 1; i <= classSize; i++)
             {
-                classList.Add(i + 1);
+                classList.Add(i);
                 
             }
             //using random index, add students to group
@@ -45,14 +48,16 @@ namespace GroupMaker10000
                 //write to console the group and the elemnets in group
                 if(groupList.Count() == groupSize || classList.Count() == 0)
                 {
-                    Console.WriteLine("Group ");
+                    Console.WriteLine("Group {0}", groupCounter);
                     //write to console using foreach element in group
                     foreach (int element in groupList)
                     {
                         Console.WriteLine(element);
                     }
+                    groupCounter++;
                     //clear grouplist and begin loop again
                     groupList.Clear();
+                    
                 }
             }
         }
