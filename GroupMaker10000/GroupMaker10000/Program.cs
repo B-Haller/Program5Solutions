@@ -13,6 +13,7 @@ namespace GroupMaker10000
         static void Main(string[] args)
         {
             GroupMaker10000(4, 20);
+            //StringBuilderExample();
             Console.ReadKey();
         }
         /// <summary>
@@ -61,5 +62,13 @@ namespace GroupMaker10000
                 }
             }
         }
+
+        //static void StringBuilderExample()
+        //{
+        //    StringBuilder aStringBuilder = new StringBuilder();
+        //    aStringBuilder.AppendLine("Hello world!");
+        //    aStringBuilder.AppendLine("My favorite color is blue.");
+        //    Console.Write(aStringBuilder.ToString());
+        //}
     }
 }

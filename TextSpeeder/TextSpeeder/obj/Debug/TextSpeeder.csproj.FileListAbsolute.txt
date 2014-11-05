@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextSpeeder\TextSpeeder\bin\Debug\TextSpeeder.exe.config
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextSpeeder\TextSpeeder\bin\Debug\TextSpeeder.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextSpeeder\TextSpeeder\bin\Debug\TextSpeeder.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextSpeeder\TextSpeeder\obj\Debug\TextSpeeder.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextSpeeder\TextSpeeder\obj\Debug\TextSpeeder.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextSpeeder\TextSpeeder\obj\Debug\TextSpeeder.pdb

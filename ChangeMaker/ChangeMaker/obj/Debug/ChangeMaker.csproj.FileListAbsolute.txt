@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\ChangeMaker\ChangeMaker\bin\Debug\ChangeMaker.exe.config
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\ChangeMaker\ChangeMaker\bin\Debug\ChangeMaker.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\ChangeMaker\ChangeMaker\bin\Debug\ChangeMaker.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\ChangeMaker\ChangeMaker\obj\Debug\ChangeMaker.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\ChangeMaker\ChangeMaker\obj\Debug\ChangeMaker.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\ChangeMaker\ChangeMaker\obj\Debug\ChangeMaker.csprojResolveAssemblyReference.cache
