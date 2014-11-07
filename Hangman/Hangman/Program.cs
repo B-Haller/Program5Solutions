@@ -20,6 +20,8 @@ namespace Hangman
 
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Clear();
             Hangman();
         }
         /// <summary>
@@ -27,10 +29,12 @@ namespace Hangman
         /// </summary>
         static void Hangman()
         {
+            Console.Title = "Soviet Re-Education: Version Perfect";
             //set vars including bool and guess attempts
             bool isPlaying = true;
             var guessAttempts = 7;
             //this var is added for additional flex later on if I choose
+            var messageToUser = string.Empty;
             var totalGuesses = 0;
             //greet and read and store player's name, then clear
             Console.WriteLine("Welcome Comrade.\nTo the Soviet Re-education System, Version Perfect.\nPlease enter your Glorious name:\n");
@@ -46,20 +50,51 @@ namespace Hangman
             Console.ReadLine();
             Console.Clear();
             //display mask letter and number of attempts remaining
-            Console.WriteLine(MaskedLetter());
-            Console.WriteLine("Number of attempts left: {0}\n\n", guessAttempts);
+            
             //will keep playing until satified
             while (isPlaying == true)
             {
+                
+
+                
                 //will keep guessing until guesses are 0 or until guessed letters equal word
                 while (guessAttempts > 0 || MaskedLetter().Contains(wordToBeGuessed))
                 {
+                    //interactive messages based on guess attempts
+                    switch (guessAttempts)
+                    {
+                        case 1:
+                            messageToUser = "How you say...the bitter cold of Mother Russia's nipple grow close to mouth.\n";
+                            break;
+                        case 2:
+                            messageToUser = "How you say...\nSiberian jacket will good look on you.\n";
+                            break;
+                        case 3:
+                            messageToUser = "How you say...\nForce may not be with you.\n";
+                            break;
+                        case 4:
+                            messageToUser = "How you say...\nHave letters been taught for you?";
+                            break;
+                        case 5:
+                            messageToUser = "How you say...\nThere is still hope Comrade." + userName;
+                            break;
+                        case 6:
+                            messageToUser = "How you say...\nYour failure can still be corrected without gun.\n";
+                            break;
+                        case 7:
+                            messageToUser = "Begin your Glorious Re-Education!";
+                            break;
+                    }
+
                     //clear console, display masked letter, give prompt
                     Console.Clear();
-                    Console.WriteLine(MaskedLetter() + "\n");
+                    Console.WriteLine("\n\n\t\t\tGlorious Word: " + MaskedLetter() + "\n");
+                    Console.WriteLine("\t\t\tLetters you have attemped: " + string.Join("-", lettersGuess.OrderBy(x => x.ToString().ToUpper())));
+                    Console.WriteLine("\t\t\tNumber of attempts left: {0}\n\n\nMessage For Inspiration Before Failure: {1}\n", guessAttempts, messageToUser);
+                    System.Threading.Thread.Sleep(1000);
                     Console.WriteLine("\nPlease try and prove an example of Soviet Patriotism and guess either a letter\nor a word. Then enter.\n");
                     //keep letters guessed on screen
-                    lettersGuess.ForEach(Console.Write);
+                    //lettersGuess.ForEach(Console.Write);
                     //space
                     Console.WriteLine();
                     //assign user input

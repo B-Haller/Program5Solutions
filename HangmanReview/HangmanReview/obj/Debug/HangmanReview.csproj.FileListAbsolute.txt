@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\HangmanReview\HangmanReview\bin\Debug\HangmanReview.exe.config
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\HangmanReview\HangmanReview\bin\Debug\HangmanReview.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\HangmanReview\HangmanReview\bin\Debug\HangmanReview.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\HangmanReview\HangmanReview\obj\Debug\HangmanReview.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\HangmanReview\HangmanReview\obj\Debug\HangmanReview.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\HangmanReview\HangmanReview\obj\Debug\HangmanReview.pdb
