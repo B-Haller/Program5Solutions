@@ -1,0 +1,5 @@
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextStatsLambda\TextStatsLambda\bin\Debug\TextStatsLambda.exe.config
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextStatsLambda\TextStatsLambda\bin\Debug\TextStatsLambda.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextStatsLambda\TextStatsLambda\bin\Debug\TextStatsLambda.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextStatsLambda\TextStatsLambda\obj\Debug\TextStatsLambda.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextStatsLambda\TextStatsLambda\obj\Debug\TextStatsLambda.pdb
