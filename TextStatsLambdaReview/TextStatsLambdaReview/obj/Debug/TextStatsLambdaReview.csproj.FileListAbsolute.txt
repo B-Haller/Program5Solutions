@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextStatsLambdaReview\TextStatsLambdaReview\bin\Debug\TextStatsLambdaReview.exe.config
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextStatsLambdaReview\TextStatsLambdaReview\obj\Debug\TextStatsLambdaReview.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextStatsLambdaReview\TextStatsLambdaReview\bin\Debug\TextStatsLambdaReview.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextStatsLambdaReview\TextStatsLambdaReview\bin\Debug\TextStatsLambdaReview.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextStatsLambdaReview\TextStatsLambdaReview\obj\Debug\TextStatsLambdaReview.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\TextStatsLambdaReview\TextStatsLambdaReview\obj\Debug\TextStatsLambdaReview.pdb

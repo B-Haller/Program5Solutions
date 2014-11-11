@@ -1,0 +1,5 @@
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\DigitalRootPractice\DigitalRootPractice\bin\Debug\DigitalRootPractice.exe.config
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\DigitalRootPractice\DigitalRootPractice\bin\Debug\DigitalRootPractice.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\DigitalRootPractice\DigitalRootPractice\bin\Debug\DigitalRootPractice.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\DigitalRootPractice\DigitalRootPractice\obj\Debug\DigitalRootPractice.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\DigitalRootPractice\DigitalRootPractice\obj\Debug\DigitalRootPractice.pdb
