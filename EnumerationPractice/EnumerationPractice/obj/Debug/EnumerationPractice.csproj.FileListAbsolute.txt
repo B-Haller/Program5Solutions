@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\EnumerationPractice\EnumerationPractice\bin\Debug\EnumerationPractice.exe.config
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\EnumerationPractice\EnumerationPractice\bin\Debug\EnumerationPractice.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\EnumerationPractice\EnumerationPractice\bin\Debug\EnumerationPractice.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\EnumerationPractice\EnumerationPractice\obj\Debug\EnumerationPractice.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\EnumerationPractice\EnumerationPractice\obj\Debug\EnumerationPractice.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\EnumerationPractice\EnumerationPractice\obj\Debug\EnumerationPractice.pdb
