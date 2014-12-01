@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Poker\Poker\bin\Debug\Poker.exe.config
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Poker\Poker\bin\Debug\Poker.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Poker\Poker\bin\Debug\Poker.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Poker\Poker\obj\Debug\Poker.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Poker\Poker\obj\Debug\Poker.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\Poker\Poker\obj\Debug\Poker.pdb

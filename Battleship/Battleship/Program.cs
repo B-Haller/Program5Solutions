@@ -31,19 +31,19 @@ namespace Battleship
         public int Y { get; set; }
         public PointStatus Status { get; set; }
 
-        //------Constructors--------
+        //Constructor
         public Point(int x, int y, PointStatus p)
         {
             this.X = x;
             this.Y = y;
             this.Status = p;
-            //methods: none
+           
         }
 
 
     }
     class Ship
-    {
+    {   //enums of ships
         public enum ShipType
         {
             Carrier,
@@ -53,22 +53,26 @@ namespace Battleship
             Minesweeper
         }
         public ShipType Type { get; set; }
-
+        
+        //list of occupied points
         private List<Point> _occupiedPoints = new List<Point>();
         public List<Point> OccupiedPoints
         {
             get { return _occupiedPoints; }
             set { _occupiedPoints = value; }
         }
+        //number of ships destoryed
         public int ShipsDestroyed { get; set; }
+
         //set length: How many cells does the ship occupy?
         public int Length { get; set; }
 
-        //bool IsDestroyed
+        //bool to determine whether the ship is destroyed
         public bool IsDestroyed
         {
             get
             {
+
                 if (OccupiedPoints.All(x => x.Status == Point.PointStatus.Hit))
                 {
                     return true;
@@ -78,8 +82,9 @@ namespace Battleship
                     return false;
                 }
             }
+            set { ;}
         }
-        //------constructor-------
+        //constructor
         public Ship(ShipType typeOfShip)
         {
             this.Type = typeOfShip;
@@ -237,19 +242,23 @@ namespace Battleship
                 }
             }
         }
-        //bool target
+        //controls targeting
         public void Target(int x, int y)
         {
 
-            
+            //if the point chosen is a ship
             if (Ocean[x, y].Status == Point.PointStatus.Ship)
             {
+                //change status to hit
                 Ocean[x, y].Status = Point.PointStatus.Hit;
+                
                 
 
             }
+                //if the point chosen is empty
             else if (Ocean[x, y].Status == Point.PointStatus.Empty)
             {
+                //change status to miss
                 Ocean[x,y].Status = Point.PointStatus.Miss;
                 
 
@@ -257,39 +266,55 @@ namespace Battleship
 
            
         }
-
+        //handles our play game logic
         public void PlayGame()
         {
-            
+            Greeting();
+
+            //while there are still ships
             while(!AllShipsDestroyed)
             {
+                //clear the console
                 Console.Clear();
+                //display the ocean
                 DisplayOcean();
+                //empty strings
                 string userX = " ";
                 string userY = " ";
+                //while the user x and user y does not contain coordinates
                 while (!"1234567890".Contains(userX) && !"123456789".Contains(userY))
                 {
+                    //ask user to enter y coordinate
                     Console.WriteLine("\nPlease enter a Y coordinate:");
                     userX = Console.ReadLine();
+                    //ask user to x coordinate
                     Console.WriteLine("\nPlease enter a X coordinate:");
                     userY = Console.ReadLine();
 
                 }
+                //target that position
                 Target(int.Parse(userX),int.Parse(userY));
+                //increment combat round
                 this.CombatRound++;
 
             }
 
+            EndGreeting();
+
         }
 
+        public void Greeting()
+        {
+            Console.WriteLine("Welcome to a Battleship Simulator.\nChoose a x and a y coordinate and try and sink the enemy's hidden ships.");
+            Console.WriteLine("\n\nPress Enter To Play!");
+            Console.ReadLine();
+        }
 
+        public void EndGreeting()
+        {
+            Console.WriteLine("You have sunk all of the enemy's ships!\nIt took you {0} shots.", CombatRound);
+        }
 
-
-            
-            //handles the logic for determining hits or misses, return true if a ship has been destroyed
-            //place the value of the number of ships currently destroyed in a variable
-            //get the point from the ocean using x, y
-
-        
     }
 }
+

@@ -1,0 +1,6 @@
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\InterfacePractice\InterfacePractice\bin\Debug\InterfacePractice.exe.config
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\InterfacePractice\InterfacePractice\bin\Debug\InterfacePractice.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\InterfacePractice\InterfacePractice\bin\Debug\InterfacePractice.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\InterfacePractice\InterfacePractice\obj\Debug\InterfacePractice.csprojResolveAssemblyReference.cache
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\InterfacePractice\InterfacePractice\obj\Debug\InterfacePractice.exe
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\InterfacePractice\InterfacePractice\obj\Debug\InterfacePractice.pdb
