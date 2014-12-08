@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sp5BrandonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BlogComment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Author" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Body" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BlogPost" Relationship="Self.FK__BlogComme__PostI__3C69FB99" FromRole="BlogComments" ToRole="BlogPosts" />
+  </EntityType>
+  <EntityType Name="BlogPost">
+    <Key>
+      <PropertyRef Name="PostID" />
+    </Key>
+    <Property Name="PostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ImageURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BlogComments" Relationship="Self.FK__BlogComme__PostI__3C69FB99" FromRole="BlogPosts" ToRole="BlogComments" />
+  </EntityType>
+  <Association Name="FK__BlogComme__PostI__3C69FB99">
+    <End Role="BlogPosts" Type="Self.BlogPost" Multiplicity="1" />
+    <End Role="BlogComments" Type="Self.BlogComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogPosts">
+        <PropertyRef Name="PostID" />
+      </Principal>
+      <Dependent Role="BlogComments">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="LogEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BlogComments" EntityType="Self.BlogComment" />
+    <EntitySet Name="BlogPosts" EntityType="Self.BlogPost" />
+    <AssociationSet Name="FK__BlogComme__PostI__3C69FB99" Association="Self.FK__BlogComme__PostI__3C69FB99">
+      <End Role="BlogPosts" EntitySet="BlogPosts" />
+      <End Role="BlogComments" EntitySet="BlogComments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

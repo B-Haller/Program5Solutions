@@ -1,0 +1,45 @@
+﻿
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title : Brandon Haller</title>
+    @*link to any scripts you need, and external style sheet*@
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    <!--visible to all-->
+    
+    
+</head>
+<body>
+    <header>
+        <div id="boxed"><p id="title">Brandon Haller</p></div>
+        
+        <nav>
+            <ul>
+                <li>
+                    Resume
+                </li>
+                <li>
+                    Work
+                </li>
+                <li>
+                    Blog
+                </li>
+                <li>
+                    Contact
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div> 
+        @RenderBody()
+        <p>Blah</p>
+        <p>Blah</p>
+    </div>
+    <footer></footer>
+</body>
+</html>

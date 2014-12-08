@@ -1,0 +1,268 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Nunito);
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body { 
+  margin:0;
+  padding:0;
+	perspective: 1px;
+    transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: AppleGaramond-Light;
+}
+
+@font-face {
+    font-family: 'LEMONMILK';
+    src: url('Fonts/LEMONMILK.OTF') format('opentype');
+}
+
+@font-face {
+    font-family: 'AppleGaramond-Light';
+    src: url('Fonts/AppleGaramond-Light.ttf') format('truetype');
+}
+
+h2 {
+    font-size: 100%;
+    font-family: LEMONMILK;
+    
+}
+#slidein{
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: slidein;
+}
+
+#slidedown{
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: slidedown;
+}
+
+
+p {
+  font-size: 140%;
+  line-height: 150%;
+  color: #333;
+}
+
+
+.slide {
+  position: relative;
+  padding: 25vh 10%;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+transform-style: inherit;
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  width: 320px;
+  height: 240px;
+  transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-100%) rotate(2deg);
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(240,230,220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+
+#programmingpic {
+  position: absolute;
+  top: 50%;
+  right: 35%;
+  width: 500px;
+  height: 500px;
+  transform: translateZ(.25px) scale(.75) translateX(100%) translateY(-100%) rotate(-2deg);
+  padding: 10px;
+  border-radius: 5px;
+  background: rgba(240,230,220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+#programs
+{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+#programs li { display: inline; }
+
+#nav
+{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+#nav li { display: inline; }
+
+@-webkit-keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+
+#rays { /* with animation properties */
+    background: url('Content/rays-main.png') 0 0 no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    width: 490px;
+    height: 490px;
+    /* chrome */
+    /*-webkit-animation-name: spin; 
+	-webkit-animation-duration: 3s;  
+	-webkit-animation-iteration-count: infinite; 
+	-webkit-animation-timing-function: linear;*/
+    opacity: 0.4;
+}
+
+h1 {
+   font-size: 250%;
+   font-family: LEMONMILK;
+ 
+}
+@-webkit-keyframes slidedown{
+    from{
+        margin-top: 100%;
+        height: 300%;
+    }
+    to{
+        margin-top: 0%;
+        height: 100%
+    }
+}
+
+@-webkit-keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+#myphoto {
+    position: absolute;
+    /*top: 50px;
+    left: 35px;*/
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-185%);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+
+img:last-of-type {
+  transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
+}
+
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right:0;
+}
+
+.title {
+  width: 50%;
+  padding: 5%;
+  border-radius: 5px;
+  background: rgba(240,230,220, .7);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .7);
+}
+
+
+/*#photoOfMe {
+
+   
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 5%;
+	
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+	
+	animation-name: spin; 
+	animation-duration: 3s;  3 seconds 
+	animation-iteration-count: infinite; 
+	animation-timing-function: linear;
+}*/
+
+
+
+.slide:nth-child(2n) .title {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.slide:nth-child(2n+1) .title {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.slide, .slide:before {
+  background: 50% 50% / cover;  
+}
+
+.header {
+  text-align: center;
+  font-size: 175%;
+  color: #fff;
+  text-shadow: 0 2px 2px #000;
+}
+
+#title {
+    
+    background-image: url('Content/Beautiful-Snowing-Mountains-HD-Wallpaper-5836.jpg');
+    background-attachment: fixed;
+}
+
+
+#slide1:before {
+  background-color: rgba(7, 27, 64, 0.7) !important;
+  transform: translateZ(-1px) scale(2);
+  z-index:-1;
+}
+
+#slide2 {
+    background-image: url('Content/Beautiful-Cherry-Blossom-Tree-Flower-Wallpaper-4957.jpg') !important;
+    background-attachment: fixed;
+}
+
+#slide3:before {
+  background-image: url("http://lorempixel.com/output/abstract-q-c-640-480-5.jpg") !important;
+  transform: translateZ(-1px) scale(2);
+  z-index:-1;
+}
+
+#slide5 {
+    background-image: url('Content/World_Korea_Nature_Korea_022219_.jpg') !important;
+    background-attachment: fixed;
+}
+
+#slide6:before{
+    background-image: url('Content/World_Korea_Nature_Korea_022219_.jpg') !important;
+    transform: translateZ(-1px) scale(2);
+    z-index:-1;
+}
+
+#slide4 {
+    background: #222;
+}
+

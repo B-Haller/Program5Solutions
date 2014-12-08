@@ -1,0 +1,42 @@
+﻿@charset "utf-8";
+/*
+Template Name: Darkness
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Layout CSS
+*/
+
+@import url("navi.css");
+@import url("forms.css");
+@import url("tables.css");
+
+
+/*html  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}*/
+html {
+    
+    background-image: url('Content/WebsiteBackground.jpg');
+    background-size: 100%;
+}
+#boxed #title {
+  font-size: 72px;
+  font-family:Impact;
+  font-weight: 100 !important;
+  background: -webkit-linear-gradient(#FFD31D, #7F690E) !important;
+  opacity: 80 !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+#boxed {
+  border: 1px solid black ;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.6);
+}
+

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sp5BrandonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BlogComments">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="Author" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Body" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="PostID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogPosts">
+    <Key>
+      <PropertyRef Name="PostID" />
+    </Key>
+    <Property Name="PostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImageURL" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <Association Name="FK__BlogComme__PostI__3C69FB99">
+    <End Role="BlogPosts" Type="Self.BlogPosts" Multiplicity="1" />
+    <End Role="BlogComments" Type="Self.BlogComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogPosts">
+        <PropertyRef Name="PostID" />
+      </Principal>
+      <Dependent Role="BlogComments">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sp5BrandonModelStoreContainer">
+    <EntitySet Name="BlogComments" EntityType="Self.BlogComments" Schema="sp5Brandon" store:Type="Tables" />
+    <EntitySet Name="BlogPosts" EntityType="Self.BlogPosts" Schema="sp5Brandon" store:Type="Tables" />
+    <AssociationSet Name="FK__BlogComme__PostI__3C69FB99" Association="Self.FK__BlogComme__PostI__3C69FB99">
+      <End Role="BlogPosts" EntitySet="BlogPosts" />
+      <End Role="BlogComments" EntitySet="BlogComments" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

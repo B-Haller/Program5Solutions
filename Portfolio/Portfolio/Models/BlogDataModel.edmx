@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sp5BrandonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BlogComments">
+          <Key>
+            <PropertyRef Name="CommentID" />
+          </Key>
+          <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="Author" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Body" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="PostID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BlogPosts">
+          <Key>
+            <PropertyRef Name="PostID" />
+          </Key>
+          <Property Name="PostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImageURL" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK__BlogComme__PostI__3C69FB99">
+          <End Role="BlogPosts" Type="Self.BlogPosts" Multiplicity="1" />
+          <End Role="BlogComments" Type="Self.BlogComments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogPosts">
+              <PropertyRef Name="PostID" />
+            </Principal>
+            <Dependent Role="BlogComments">
+              <PropertyRef Name="PostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sp5BrandonModelStoreContainer">
+          <EntitySet Name="BlogComments" EntityType="Self.BlogComments" Schema="sp5Brandon" store:Type="Tables" />
+          <EntitySet Name="BlogPosts" EntityType="Self.BlogPosts" Schema="sp5Brandon" store:Type="Tables" />
+          <AssociationSet Name="FK__BlogComme__PostI__3C69FB99" Association="Self.FK__BlogComme__PostI__3C69FB99">
+            <End Role="BlogPosts" EntitySet="BlogPosts" />
+            <End Role="BlogComments" EntitySet="BlogComments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sp5BrandonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BlogComment">
+          <Key>
+            <PropertyRef Name="CommentID" />
+          </Key>
+          <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Author" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Body" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PostID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BlogPost" Relationship="Self.FK__BlogComme__PostI__3C69FB99" FromRole="BlogComments" ToRole="BlogPosts" />
+        </EntityType>
+        <EntityType Name="BlogPost">
+          <Key>
+            <PropertyRef Name="PostID" />
+          </Key>
+          <Property Name="PostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImageURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BlogComments" Relationship="Self.FK__BlogComme__PostI__3C69FB99" FromRole="BlogPosts" ToRole="BlogComments" />
+        </EntityType>
+        <Association Name="FK__BlogComme__PostI__3C69FB99">
+          <End Role="BlogPosts" Type="Self.BlogPost" Multiplicity="1" />
+          <End Role="BlogComments" Type="Self.BlogComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogPosts">
+              <PropertyRef Name="PostID" />
+            </Principal>
+            <Dependent Role="BlogComments">
+              <PropertyRef Name="PostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LogEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BlogComments" EntityType="Self.BlogComment" />
+          <EntitySet Name="BlogPosts" EntityType="Self.BlogPost" />
+          <AssociationSet Name="FK__BlogComme__PostI__3C69FB99" Association="Self.FK__BlogComme__PostI__3C69FB99">
+            <End Role="BlogPosts" EntitySet="BlogPosts" />
+            <End Role="BlogComments" EntitySet="BlogComments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sp5BrandonModelStoreContainer" CdmEntityContainer="LogEntities">
+          <EntitySetMapping Name="BlogComments">
+            <EntityTypeMapping TypeName="sp5BrandonModel.BlogComment">
+              <MappingFragment StoreEntitySet="BlogComments">
+                <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="PostID" ColumnName="PostID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlogPosts">
+            <EntityTypeMapping TypeName="sp5BrandonModel.BlogPost">
+              <MappingFragment StoreEntitySet="BlogPosts">
+                <ScalarProperty Name="PostID" ColumnName="PostID" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
