@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ParallaxPortfolio.Models.BlogPost>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <title>Index</title>
+</head>
+<body id="postbody">
+
+        @foreach (var item in Model.OrderByDescending(x=>x.DateCreated))
+        {
+
+           <div id="post">
+                    <h2 id="postheader">@Html.DisplayFor(modelItem => item.Title)</h2>
+                    
+                <br />
+                    
+                    @Html.DisplayFor(modelItem => item.Body)
+                <br />
+                    <p id="datetime">@Html.DisplayFor(modelItem => item.DateCreated)</p>
+               <div id="leftimage">
+                   <img id="blogpostimage" src="@Html.DisplayFor(modelItem => item.ImageURL)" />
+               </div>
+              </div>
+        }
+</body>
+</html>

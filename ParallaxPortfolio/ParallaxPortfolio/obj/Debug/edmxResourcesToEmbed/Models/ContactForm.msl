@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sp5BrandonModelStoreContainer" CdmEntityContainer="sp5BrandonEntities">
+    <EntitySetMapping Name="BlogComments">
+      <EntityTypeMapping TypeName="sp5BrandonModel.BlogComment">
+        <MappingFragment StoreEntitySet="BlogComments">
+          <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogPosts">
+      <EntityTypeMapping TypeName="sp5BrandonModel.BlogPost">
+        <MappingFragment StoreEntitySet="BlogPosts">
+          <ScalarProperty Name="PostID" ColumnName="PostID" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="ImageURL" ColumnName="ImageURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactForms">
+      <EntityTypeMapping TypeName="sp5BrandonModel.ContactForm">
+        <MappingFragment StoreEntitySet="ContactForms">
+          <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DeleteBloodBankByID" FunctionName="sp5BrandonModel.Store.DeleteBloodBankByID" />
+    <FunctionImportMapping FunctionImportName="DeleteDonorByID" FunctionName="sp5BrandonModel.Store.DeleteDonorByID" />
+    <FunctionImportMapping FunctionImportName="DeletePatientByID" FunctionName="sp5BrandonModel.Store.DeletePatientByID" />
+    <FunctionImportMapping FunctionImportName="GetBloodBankID" FunctionName="sp5BrandonModel.Store.GetBloodBankID" />
+    <FunctionImportMapping FunctionImportName="GetDonorID" FunctionName="sp5BrandonModel.Store.GetDonorID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sp5BrandonModel.GetDonorID_Result">
+          <ScalarProperty Name="DonorID" ColumnName="DonorID" />
+          <ScalarProperty Name="DonorName" ColumnName="DonorName" />
+          <ScalarProperty Name="DonorBloodtype" ColumnName="DonorBloodtype" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetDonorsByPatientID" FunctionName="sp5BrandonModel.Store.GetDonorsByPatientID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sp5BrandonModel.GetDonorsByPatientID_Result">
+          <ScalarProperty Name="DonorID" ColumnName="DonorID" />
+          <ScalarProperty Name="DonorName" ColumnName="DonorName" />
+          <ScalarProperty Name="DonorBloodtype" ColumnName="DonorBloodtype" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetHighScoreID" FunctionName="sp5BrandonModel.Store.GetHighScoreID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sp5BrandonModel.GetHighScoreID_Result">
+          <ScalarProperty Name="HighScoreID" ColumnName="HighScoreID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Game" ColumnName="Game" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetPatientID" FunctionName="sp5BrandonModel.Store.GetPatientID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="sp5BrandonModel.GetPatientID_Result">
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="PatientBloodtype" ColumnName="PatientBloodtype" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertBloodBank" FunctionName="sp5BrandonModel.Store.InsertBloodBank" />
+    <FunctionImportMapping FunctionImportName="InsertDonor" FunctionName="sp5BrandonModel.Store.InsertDonor" />
+    <FunctionImportMapping FunctionImportName="insertHighScore" FunctionName="sp5BrandonModel.Store.insertHighScore" />
+    <FunctionImportMapping FunctionImportName="InsertPatient" FunctionName="sp5BrandonModel.Store.InsertPatient" />
+    <FunctionImportMapping FunctionImportName="UpdateBloodBanks" FunctionName="sp5BrandonModel.Store.UpdateBloodBanks" />
+    <FunctionImportMapping FunctionImportName="UpdateDonor" FunctionName="sp5BrandonModel.Store.UpdateDonor" />
+    <FunctionImportMapping FunctionImportName="UpdatePatient" FunctionName="sp5BrandonModel.Store.UpdatePatient" />
+  </EntityContainerMapping>
+</Mapping>

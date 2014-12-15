@@ -1,0 +1,31 @@
+﻿@model ParallaxPortfolio.Models.ContactForm
+@*@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}*@
+<link href="~/StyleSheet.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.11.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<div id="contactform">
+<h2>Contact</h2>
+<form action="@Url.Action("Index", "Contact")" method="post">
+    @Html.LabelFor(x => x.Name)
+    @Html.EditorFor(x => x.Name)
+    @Html.ValidationMessageFor(x => x.Name)
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Email)
+    @Html.EditorFor(x => x.Email)
+    @Html.ValidationMessageFor(x => x.Email)
+    <br />
+    <br />
+    @Html.LabelFor(x => x.Body)
+    @Html.EditorFor(x => x.Body)
+    @Html.ValidationMessageFor(x => x.Body)
+    <br />
+    <br />
+    <input type="submit" class="styled-button-4" value="Send It!" />
+</form>
+</div>
+

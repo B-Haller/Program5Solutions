@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sp5BrandonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BlogComment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Author" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Body" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="BlogPost" Relationship="Self.FK__BlogComme__PostI__3C69FB99" FromRole="BlogComments" ToRole="BlogPosts" />
+  </EntityType>
+  <EntityType Name="BlogPost">
+    <Key>
+      <PropertyRef Name="PostID" />
+    </Key>
+    <Property Name="PostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ImageURL" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BlogComments" Relationship="Self.FK__BlogComme__PostI__3C69FB99" FromRole="BlogPosts" ToRole="BlogComments" />
+  </EntityType>
+  <EntityType Name="ContactForm">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Body" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK__BlogComme__PostI__3C69FB99">
+    <End Role="BlogPosts" Type="Self.BlogPost" Multiplicity="1" />
+    <End Role="BlogComments" Type="Self.BlogComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogPosts">
+        <PropertyRef Name="PostID" />
+      </Principal>
+      <Dependent Role="BlogComments">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sp5BrandonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BlogComments" EntityType="Self.BlogComment" />
+    <EntitySet Name="BlogPosts" EntityType="Self.BlogPost" />
+    <EntitySet Name="ContactForms" EntityType="Self.ContactForm" />
+    <AssociationSet Name="FK__BlogComme__PostI__3C69FB99" Association="Self.FK__BlogComme__PostI__3C69FB99">
+      <End Role="BlogPosts" EntitySet="BlogPosts" />
+      <End Role="BlogComments" EntitySet="BlogComments" />
+    </AssociationSet>
+    <FunctionImport Name="DeleteBloodBankByID">
+      <Parameter Name="BloodBankID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeleteDonorByID">
+      <Parameter Name="DonorID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeletePatientByID">
+      <Parameter Name="PatientID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetBloodBankID">
+      <Parameter Name="BloodBankID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetDonorID" ReturnType="Collection(sp5BrandonModel.GetDonorID_Result)">
+      <Parameter Name="DonorID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetDonorsByPatientID" ReturnType="Collection(sp5BrandonModel.GetDonorsByPatientID_Result)">
+      <Parameter Name="PatientID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetHighScoreID" ReturnType="Collection(sp5BrandonModel.GetHighScoreID_Result)">
+      <Parameter Name="HighScoreID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetPatientID" ReturnType="Collection(sp5BrandonModel.GetPatientID_Result)">
+      <Parameter Name="PatientID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InsertBloodBank">
+      <Parameter Name="BloodBankName" Mode="In" Type="String" />
+      <Parameter Name="BloodBankAddress" Mode="In" Type="String" />
+      <Parameter Name="BloodBankContactNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="InsertDonor">
+      <Parameter Name="DonorName" Mode="In" Type="String" />
+      <Parameter Name="DonorBloodtype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="insertHighScore">
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="game" Mode="In" Type="String" />
+      <Parameter Name="score" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="InsertPatient">
+      <Parameter Name="PatientName" Mode="In" Type="String" />
+      <Parameter Name="PatientBloodtype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateBloodBanks">
+      <Parameter Name="BloodBankName" Mode="In" Type="String" />
+      <Parameter Name="BloodBankAddress" Mode="In" Type="String" />
+      <Parameter Name="BloodBankContactNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateDonor">
+      <Parameter Name="DonorName" Mode="In" Type="String" />
+      <Parameter Name="DonorBloodtype" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdatePatient">
+      <Parameter Name="PatientName" Mode="In" Type="String" />
+      <Parameter Name="PatientBloodtype" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetDonorID_Result">
+    <Property Type="Int32" Name="DonorID" Nullable="false" />
+    <Property Type="String" Name="DonorName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DonorBloodtype" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetDonorsByPatientID_Result">
+    <Property Type="Int32" Name="DonorID" Nullable="false" />
+    <Property Type="String" Name="DonorName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="DonorBloodtype" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GetHighScoreID_Result">
+    <Property Type="Int32" Name="HighScoreID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Game" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Score" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetPatientID_Result">
+    <Property Type="Int32" Name="PatientID" Nullable="false" />
+    <Property Type="String" Name="PatientName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PatientBloodtype" Nullable="false" MaxLength="50" />
+  </ComplexType>
+</Schema>

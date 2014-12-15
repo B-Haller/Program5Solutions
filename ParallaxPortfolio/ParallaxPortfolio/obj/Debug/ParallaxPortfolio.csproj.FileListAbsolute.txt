@@ -16,3 +16,7 @@ C:\Users\Technologist\Documents\GitHub\Program5Solutions\ParallaxPortfolio\Paral
 C:\Users\Technologist\Documents\GitHub\Program5Solutions\ParallaxPortfolio\ParallaxPortfolio\obj\Debug\ParallaxPortfolio.csprojResolveAssemblyReference.cache
 C:\Users\Technologist\Documents\GitHub\Program5Solutions\ParallaxPortfolio\ParallaxPortfolio\obj\Debug\ParallaxPortfolio.dll
 C:\Users\Technologist\Documents\GitHub\Program5Solutions\ParallaxPortfolio\ParallaxPortfolio\obj\Debug\ParallaxPortfolio.pdb
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\ParallaxPortfolio\ParallaxPortfolio\bin\EntityFramework.dll
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\ParallaxPortfolio\ParallaxPortfolio\bin\EntityFramework.SqlServer.dll
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\ParallaxPortfolio\ParallaxPortfolio\bin\EntityFramework.xml
+C:\Users\Technologist\Documents\GitHub\Program5Solutions\ParallaxPortfolio\ParallaxPortfolio\bin\EntityFramework.SqlServer.xml
