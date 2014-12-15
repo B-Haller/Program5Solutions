@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- jQuery import -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- Main JavaScript-->
+    <script src="~/Scripts/main.js"></script>
+    <!--Main Css-->
+    <link href="~/Scripts/Site.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="wrapper">
+    <div class="container">
+        <header>
+            <nav>
+                <ul class="list-inline">
+                    <li><img src="http://cdn-img.easylogo.cn/gif/51/51700.gif" /></li>
+                    <li data-url="@Url.Action("Index", "Home")" class="ajax-link">Home</li>
+                    <li data-url="@Url.Action("Index", "Contact")" class="ajax-link">Contact</li>
+                    <li data-url="@Url.Action("Work", "Home")" class="ajax-link">Work</li>
+                    <li data-url="@Url.Action("Careers", "Home")" class="ajax-link">Careers</li>
+                    <li data-url="@Url.Action("About", "Home")" class="ajax-link">About</li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container body-content">
+            <div class="content">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <div class="push">  </div>
+</div>
+    <div class="footer">
+        <nav>
+        <ol class="list-inline breadcrumb">
+            <li>&copy; @DateTime.Now.Year Fake Studio</li>
+            <li data-url="@Url.Action("Index", "Home")" class="ajax-link">Home</li>
+            <li data-url="@Url.Action("Index", "Contact")" class="ajax-link">Contact</li>
+            <li data-url="@Url.Action("Work", "Home")" class="ajax-link">Work</li>
+            <li data-url="@Url.Action("Careers", "Home")" class="ajax-link">Careers</li>
+            <li data-url="@Url.Action("About", "Home")" class="ajax-link">About</li>
+        </ol>
+        </nav>
+    </div>
+</body>
+</html>

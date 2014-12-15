@@ -1,0 +1,59 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.fullwidth{
+    width: 100%;
+}
+.threebythree{
+    display: inline-block;
+    float: left;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 1px;
+    margin-right: 2px;
+    width: 33%;
+    padding: 5px;
+    border: grey solid 1px;
+    border-radius: 10%;
+}
+
+.footer, .push {
+height: 4em;
+}
+
+.footer{
+    text-align: center;
+
+}
+
+form {
+    height: 100%;
+}
+.wrapper {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+margin: 0 auto -4em;
+}
+
+* {
+margin: 0;
+}
+
+html, body {
+height: 100%;
+}
