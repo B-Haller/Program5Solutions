@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MVC with AJAX</title>
+
+    <!-- jQuery import -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Main JavaScript-->
+    <script src="~/Scripts/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Using MVC with AJAX</h1>
+            <nav>
+                <ul class="list-inline">
+                    <li data-url="@Url.Action("Index", "Home")" class="ajax-link">Home</li>
+                    <li data-url="@Url.Action("Contact", "Home")" class="ajax-link">Contact</li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            @RenderBody()
+        </div>
+    </div>
+
+    <script>
+      
+    </script>
+</body>
+</html>
