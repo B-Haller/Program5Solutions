@@ -1,48 +1,34 @@
-﻿$(document).ready(function() {
-  function filterPath(string) {
-  return string
-    .replace(/^\//,'')
-    .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
-    .replace(/\/$/,'');
-  }
-  var locationPath = filterPath(location.pathname);
-  var scrollElem = scrollableElement('html', 'body');
- 
-  $('a[href*=#]').each(function() {
-    var thisPath = filterPath(this.pathname) || locationPath;
-    if (  locationPath == thisPath
-    && (location.hostname == this.hostname || !this.hostname)
-    && this.hash.replace(/#/,'') ) {
-      var $target = $(this.hash), target = this.hash;
-      if (target) {
-        var targetOffset = $target.offset().top;
-        $(this).click(function(event) {
-          event.preventDefault();
-          $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
-            location.hash = target;
-          });
-        });
-      }
+﻿
+frameRate = 30;
+timeInterval = Math.round(1000 / frameRate);
+relMouseX = 0;
+relMouseY = 0;
+
+$(document).ready(function () {
+    // get the stage offset
+    offset = $('#stage').offset();
+
+    // start calling animateFollower at the 'timeInterval' we calculated above
+    atimer = setInterval("animateFollower()", timeInterval);
+
+
+    // track and save the position of the mouse
+    $(document).mousemove(function (e) {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+        relMouseX = mouseX - offset.left;
+        relMouseY = mouseY - offset.top;
+
+        // display the current mouse positions
+        $('#mouse_x-trace').text(mouseX);
+        $('#mouse_y-trace').text(mouseY);
+    });
+
+    // move the image where the mouse is
+    // this function is called by the setInterval command above to run
+    // at a rate of 30 frames per second
+    function animateFollower() {
+        $('#follower').css('left', relMouseX);
+        $('#follower').css('top', relMouseY);
     }
-  });
- 
-  // use the first element that is "scrollable"
-  function scrollableElement(els) {
-    for (var i = 0, argLength = arguments.length; i <argLength; i++) {
-      var el = arguments[i],
-          $scrollElement = $(el);
-      if ($scrollElement.scrollTop()> 0) {
-        return el;
-      } else {
-        $scrollElement.scrollTop(1);
-        var isScrollable = $scrollElement.scrollTop()> 0;
-        $scrollElement.scrollTop(0);
-        if (isScrollable) {
-          return el;
-        }
-      }
-    }
-    return [];
-  }
- 
 });

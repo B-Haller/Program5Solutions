@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width" />
     <link href="~/StyleSheet.css" rel="stylesheet" />
     <link rel="shortcut icon" href="/Content/100px-Mercury_in_color_-_Prockter07-edit1-20141207-favicon.ico" />
-    <script src="~/Scripts/JavaScript.js"></script>
     <script src="~/Scripts/jquery-1.11.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/JavaScript.js"></script>
     <title>Portfolio of an Explorer</title>
     @RenderBody()
     
@@ -20,12 +20,15 @@
     
         <div id="title" class="slide header">
 
-            <div id="slidedown">
-                <h1>
-                    <br/>
-                    Brandon Haller
-                </h1>
-                <img id="myphoto" src="~/Content/200px-full_moon1.jpeg" />
+            <div id="slidedown"> 
+                <div id="stage"><h2 id="follower">hey</h2></div>
+                    <h1>
+                        <br />
+                        Brandon Haller
+                    </h1>
+
+                    @*<img id="myphoto" src="~/Content/200px-full_moon1.jpeg" />*@
+               
             </div>
                 
             <div id="slidein">
@@ -36,8 +39,6 @@
                 <h2>We shall not cease from exploration, and the end of all our exploring will be to arrive where we started and know the place for the first time. -TS Elliot</h2>    
             </div>
             <br />
-            @*<br />
-            <br />*@
             <ul id="jumpnav">
                 <li class="grow"><a href="#programmer">Programmer</a></li>
                 <li class="grow"><a href="#writer">Writer</a></li>

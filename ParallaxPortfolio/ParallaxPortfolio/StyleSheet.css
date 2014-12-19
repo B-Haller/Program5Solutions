@@ -27,9 +27,6 @@ a:visited {
 
 a:hover {
     text-decoration: none;
-    /*background: -webkit-linear-gradient(#402C00, #000);*/
-    /*-webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;*/
 }
 
 
@@ -118,8 +115,6 @@ img {
 
 #resume {
   position: relative;
-  /*top: 50%;
-  left: 35%;*/
   width: 1300px;
   height: 1000px;
   transform: translateZ(.25px) scale(.75) translateX(0%) translateY(0%);
@@ -195,22 +190,6 @@ font-size:100%;
 	to { transform: rotate(360deg); }
 }
 
-#rays { /* with animation properties */
-    background: url('Content/rays-main.png') 0 0 no-repeat;
-    position: absolute;
-    /*top: 50%;
-    left: 35%;*/
-    width: 490px;
-    height: 490px;
-    padding: 0;
-    transform: translateZ(.25px) scale(.75) translateX(-94%) translateY(-225%);
-    /* chrome */
-    -webkit-animation-name: spin; 
-	-webkit-animation-duration: 3s;  
-	-webkit-animation-iteration-count: infinite; 
-	-webkit-animation-timing-function: linear;
-    opacity: 0.4;
-}
 
 h1 {
    font-size: 250%;
@@ -240,11 +219,22 @@ h1 {
   }
 }
 
+#stage{ 
+position: relative; 
+overflow: hidden;  
+width: 500px;
+height: 400px;
+margin: 0 auto;
+border: 1px solid;
+}
+
+
+#follower{ 
+    position: absolute; 
+}
 
 #myphoto {
     position: absolute;
-    /*top: 50px;
-    left: 35px;*/
     width: 200px;
     height: 200px;
     padding: 0;
@@ -273,27 +263,6 @@ img:last-of-type {
   background: rgba(240,230,220, .7);
   box-shadow: 0 0 8px rgba(0, 0, 0, .7);
 }
-
-
-/*#photoOfMe {
-
-   
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    padding: 5%;
-	
-	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
-	background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
-	background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
-	
-	animation-name: spin; 
-	animation-duration: 3s;  3 seconds 
-	animation-iteration-count: infinite; 
-	animation-timing-function: linear;
-}*/
-
 
 
 .slide:nth-child(2n) .title {
@@ -454,9 +423,6 @@ img:last-of-type {
 }
 
 #post {
-  /*position: absolute;
-  top: 50%;
-  left: 35%;*/
   margin-left: auto;
   margin-right: auto;
   width: 600px;
